@@ -38,11 +38,6 @@ Feel free to reach out to me via email at jessiemarchio@gmail.com or connect wit
    ```
 4. Access your website at `http://127.0.0.1:5000/` in your web browser.
 
-## Customization
-
-- Modify the HTML templates (`index.html`, `about.html`, `contact.html`) to customize the content and appearance of your website.
-- Extend the functionality of your website by adding more routes and logic to the `app.py` file.
-
 ## Deployment
 
 To deploy your website to a web hosting service, you can follow these steps:
