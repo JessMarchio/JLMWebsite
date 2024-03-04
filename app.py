@@ -15,5 +15,13 @@ def about():
 def contact():
     return render_template('contact.html')
 
+@app.route('/articles')
+def contact():
+    return render_template('articles.html')
+
+@app.route('/portfolio')
+def contact():
+    return render_template('portfolio.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
