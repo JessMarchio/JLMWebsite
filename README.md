@@ -54,6 +54,3 @@ To deploy your website to a web hosting service, you can follow these steps:
 
 Thank you for visiting my repository and checking out my website. Happy browsing!
 
---- 
-
-Feel free to further customize this README based on your preferences or any additional details you'd like to include!
