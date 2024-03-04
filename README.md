@@ -1,4 +1,3 @@
-# JLMWebsite
 # Personal Website Repository
 
 Welcome to the repository for my personal website! This repository contains the source code and assets for my website, where I showcase my work, share information about myself, and provide ways to connect with me.
