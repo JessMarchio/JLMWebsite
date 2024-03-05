@@ -4,7 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Jess Marchio</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        div.gallery {
+            margin: 5px;
+            border: 1px solid #ccc;
+            float: left;
+            width: 180px;
+        }
+
+        div.gallery:hover {
+            border: 1px solid #777;
+        }
+
+        div.gallery img {
+            width: 100%;
+            height: auto;
+        }
+
+        div.desc {
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -15,7 +37,16 @@
         <p>Aside from our love for adventure, we also value quality time spent with family and friends. Whether it's hosting lively gatherings, sharing stories over a home-cooked meal, or embarking on spontaneous road trips, these shared experiences enrich our lives and create lasting memories.</p>
         <p>When we're not out and about, you can often find us immersed in our passions. From diving into captivating novels to experimenting with new recipes in the kitchen, we're always eager to pursue our interests and expand our horizons.</p>
         <p>If you'd like to connect or learn more about us, feel free to reach out on <a href="https://www.linkedin.com/in/jessie-marchio-096515114//">LinkedIn</a>. We're excited to meet new people and share our journey with you!</p>
+        
+        <!-- Image Gallery -->
+        <div class="gallery">
+            <a target="_blank" href="us.jpg">
+                <img src="us.jpg" alt="Beau and I" width="600" height="400">
+            </a>
+            <div class="desc">Beau & I</div>
+        </div>
+        <!-- Add more images as needed -->
+
     </div>
-    
 </body>
 </html>
