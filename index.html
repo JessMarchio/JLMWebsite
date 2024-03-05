@@ -3,47 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Personal Website</title>
+    <title>Jessie Marchio</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <style>
-        body {
-            font-family: Cambria, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin: 5px; /* Add margin for spacing between buttons */
         }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Container Styles */
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #fff;
+            text-align: center;
         }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #666;
-        }
-        a {
-            color: #0077b5;
-            text-decoration: none;
+
+        .container p {
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Welcome to My Personal Website!</h1>
-        <p>Hey there, I'm [Your Name] and this is my corner of the internet! Feel free to look around and get to know me better.</p>
-        <h2>Explore My World</h2>
+        <p>Hey there, I'm Jess and this is my corner of the internet! Feel free to look around and get to know me better.</p>
         <p>Here's what you'll find:</p>
-        <ul>
-            <li><a href="about.html">About Me:</a> Get to know me better and discover what makes me tick!</li>
-            <li><a href="portfolio.html">Portfolio:</a> Check out some of my work, projects, and achievements.</li>
-            <li><a href="contact.html">Contact:</a> Reach out to me for any inquiries, opportunities, or just to say hi!</li>
-        </ul>
+        <a href="aboutMe.html" class="btn">About Me</a>
+        <a href="portfolio.html" class="btn">Portfolio</a>
+        <a href="contact.html" class="btn">Contact</a>
+        <a href="articles.html" class="btn">Articles</a>
+
         <h2>Connect with Me</h2>
-        <p>Want to stay in touch? You can also find me on <a href="https://www.linkedin.com/in/jessie-m-096515114/">LinkedIn</a>, where I share more about my professional journey and connect with like-minded individuals.</p>
+        <p>Want to stay in touch? You can also find me on <a href="https://www.linkedin.com/in/jessie-marchio-096515114/" class="btn">LinkedIn</a>, where I share more about my professional journey and connect with like-minded individuals.</p>
         <p>Thanks for visiting!</p>
+        
+        <!-- Picture Element -->
+        <picture>
+            <source srcset="images/sylvie.webp" type="image/webp">
+            <source srcset="images/sylvie.jpg" type="image/jpeg">
+            <img src="images/sylvie.jpg" alt="Header Image">
+        </picture>
     </div>
-    
 </body>
 </html>
