@@ -6,11 +6,22 @@
     <title>About Me - Jess Marchio</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
+        /* Container Styles */
+        .container {
+            max-width: 800px; /* Set maximum width of the container */
+            margin: 0 auto; /* Center the container horizontally */
+            padding: 0 20px; /* Add some padding to the container */
+        }
+
         /* Gallery Styles */
+        .container {
+            text-align: center; /* Center align container */
+        }
+
         div.gallery {
             margin: 5px;
             border: 1px solid #ccc;
-            /* Remove float property to stack images vertically */
+            display: inline-block; /* Change display to inline-block */
             width: 180px;
         }
 
@@ -26,17 +37,6 @@
         div.desc {
             padding: 15px;
             text-align: center;
-        }
-
-        /* Panoramic Image Styles */
-        .panoramic-image {
-            width: 100%;
-            height: auto;
-        }
-
-        /* Container Styles */
-        .container {
-            /* Add container styles if needed */
         }
     </style>
 </head>
@@ -54,13 +54,13 @@
         <!-- Image Gallery -->
         <div class="gallery">
             <a target="_blank" href="images/us.jpeg">
-                <img src="images/us.jpeg" alt="Beau and I" width="600" height="400">
+                <img src="images/us.jpeg" alt="Beau and I">
             </a>
             <div class="desc">Beau & I</div>
         </div>
         <div class="gallery">
             <a target="_blank" href="images/jan24.jpg">
-                <img src="images/jan24.jpg" alt="Trinidad January 2024" width="6204" height="1928">
+                <img src="images/jan24.jpg" alt="Trinidad January 2024">
             </a>
             <div class="desc">Trinidad January 2024</div>
         </div>
