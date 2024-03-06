@@ -4,36 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jessie Marchio</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <style>
-        /* Button Styles */
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            margin: 5px; /* Add margin for spacing between buttons */
-        }
-
-        .btn:hover {
-            background-color: #0056b3;
-        }
-
-        /* Container Styles */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .container p {
-            margin-bottom: 20px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="container.css"> <!-- Link to container CSS file -->
+    <link rel="stylesheet" type="text/css" href="buttons.css"> <!-- Link to buttons CSS file -->
+    <link rel="stylesheet" type="text/css" href="pictures.css"> <!-- Link to picture CSS file -->
 </head>
 <body>
     <div class="container">
@@ -50,11 +23,12 @@
         <p>Thanks for visiting!</p>
         
         <!-- Picture Element -->
-        <picture>
-            <source srcset="images/sylvie.webp" type="image/webp">
-            <source srcset="images/sylvie.jpg" type="image/jpeg">
-            <img src="images/sylvie.jpg" alt="Header Image">
-        </picture>
+        <div class="picture-container">
+            <picture>
+                <source srcset="images/sylvie.webp" type="image/webp">
+                <img src="images/sylvie.jpg" alt="Header Image">
+            </picture>
+        </div>
     </div>
 </body>
 </html>

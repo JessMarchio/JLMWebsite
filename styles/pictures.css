@@ -1,0 +1,33 @@
+/* style.css */
+
+/* Add styles for pictures */
+.picture-container {
+    position: relative;
+    margin-bottom: 20px; /* Add spacing between pictures */
+}
+
+.picture-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Add border radius for rounded corners */
+}
+
+.picture-label {
+    position: absolute;
+    bottom: 10px; /* Adjust position from the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: #fff; /* White text color */
+    padding: 5px 10px; /* Padding around the label */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.picture-label a {
+    color: #fff; /* White text color for links */
+    text-decoration: none;
+}
+
+.picture-label a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
