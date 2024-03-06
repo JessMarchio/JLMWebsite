@@ -1,34 +1,148 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jessie Marchio</title>
-    <link rel="stylesheet" type="text/css" href="container.css"> <!-- Link to container CSS file -->
-    <link rel="stylesheet" type="text/css" href="buttons.css"> <!-- Link to buttons CSS file -->
-    <link rel="stylesheet" type="text/css" href="pictures.css"> <!-- Link to picture CSS file -->
-</head>
-<body>
-    <div class="container">
-        <h1>Welcome to My Personal Website!</h1>
-        <p>Hey there, I'm Jess and this is my corner of the internet! Feel free to look around and get to know me better.</p>
-        <p>Here's what you'll find:</p>
-        <a href="aboutMe.html" class="btn">About Me</a>
-        <a href="portfolio.html" class="btn">Portfolio</a>
-        <a href="contact.html" class="btn">Contact</a>
-        <a href="articles.html" class="btn">Articles</a>
+<!DOCTYPE HTML>
 
-        <h2>Connect with Me</h2>
-        <p>Want to stay in touch? You can also find me on <a href="https://www.linkedin.com/in/jessie-marchio-096515114/" class="btn">LinkedIn</a>, where I share more about my professional journey and connect with like-minded individuals.</p>
-        <p>Thanks for visiting!</p>
+<html>
+<head>
+    <title>Jess Marchio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+
+<!-- Header -->
+<section id="header">
+    <header>
+        <span class="image avatar"><img src="images/jan24.jpg" alt="" /></span>
+        <h1 id="logo"><a href="#">Jessie Marchio</a></h1>
+        <p>Welcome to My Personal Website!<br />
+            Hey there, I'm Jess and this is my corner of the internet! Feel free to look around and get to know me better.</p>
+    </header>
+    <nav id="nav">
+        <ul>
+            <li><a href="#one" class="active">About</a></li>
+            <li><a href="#two">Portfolio</a></li>
+            <li><a href="#three">Contact</a></li>
+            <li><a href="#four">Articles</a></li>
+        </ul>
+    </nav>
+    <footer>
+        <ul class="icons">
+            <li><a href="#" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+        </ul>
+    </footer>
+</section>
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+
+        <!-- One -->
+        <section id="one">
+            <div class="container">
+                <header class="major">
+                    <h2>About Me</h2>
+                    <p>Hey there! I'm Jess, and my partner Beau and I call the lovely town of Trinidad, CO, our home sweet home. We made the move here in 2021, and it's been an incredible journey ever since. Trinidad's charming atmosphere, surrounded by the breathtaking Rocky Mountains and vast front range, has truly captured our hearts.</p>
+                    <p>Our cozy abode is filled with warmth and love, complemented by the joyful presence of our pets. Mocha, Luna, Sylvie, Perch, and Duncan are more than just animals to us – they're cherished members of our family. Their playful antics and unwavering loyalty bring endless happiness to our lives.</p>
+                    <p>Being nature enthusiasts, we relish every opportunity to explore the great outdoors. Whether we're hiking along scenic trails, kayaking on tranquil waters, or simply soaking up the beauty of nature, we feel a profound sense of connection and serenity in these moments.</p>
+                    <p>Aside from our love for adventure, we also value quality time spent with family and friends. Whether it's hosting lively gatherings, sharing stories over a home-cooked meal, or embarking on spontaneous road trips, these shared experiences enrich our lives and create lasting memories.</p>
+                    <p>We're also proud plant parents with over 200 houseplants that bring vibrance and life to our home.</p>
+                    <p>When we're not out and about, you can often find us immersed in our passions. From diving into podcasts, audiobooks, or new video games, to experimenting with new recipes in the kitchen, we're always eager to pursue our interests and expand our horizons.</p>
+                    <p>If you'd like to connect or learn more about me, feel free to reach out on <a href="https://www.linkedin.com/in/jessie-marchio-096515114//">LinkedIn</a>. We're excited to meet new people and share our journey with you!</p>
+
+                    <!-- Image Gallery -->
+                    <div class="gallery">
+                        <a target="_blank" href="images/us.jpeg">
+                            <img src="images/us.jpeg" alt="Beau and I" class="small-img" width="500" height="700">
+                        </a>
+                        <div class="desc">Beau & I</div>
+                    </div>                    
+                </header>
+            </div>
+        </section>
+
+
+        <!-- Two -->
+        <section id="two">
+            <div class="container">
+                <h2>Portfolio</h2>
+                <h3>Quality Assurance (QA) Lead Role</h3>
+                <p>As a seasoned Quality Assurance (QA) Lead, I ensure the highest standards of quality and performance in software development projects. With extensive experience in leading QA teams and implementing robust testing strategies, I play a pivotal role in delivering top-notch products that exceed client expectations.</p>
+
+                <h3>GitHub Repository</h3>
+                <p>Check out my GitHub repository to explore some of the projects I've worked such as this demo Cypress test automation project located on my github repo. <a href="https://github.com/JessMarchio">GitHub - JessMarchio</a></p>
+                <p>For more details about my professional background and projects, feel free to check out my <a href="https://www.linkedin.com/in/jessie-marchio-096515114/">LinkedIn profile</a>.</p>
+                                <!-- Portfolio items can be added here -->
+            </div>
+        </section>
+
+        <!-- Three -->
+        <section id="three">
+            <div class="container">
+                <h2>Contact</h2>
+                <p>Hey there! If you have any questions, exciting opportunities, or just want to drop a friendly hello, I'd love to hear from you!</p>
+                <p>You can get in touch with me through my LinkedIn! Just click <a href="https://www.linkedin.com/in/jessie-m-096515114/">here</a> to find my profile.</p>
+                <p>I'm looking forward to hearing from you!</p>
         
-        <!-- Picture Element -->
-        <div class="picture-container">
-            <picture>
-                <source srcset="images/sylvie.webp" type="image/webp">
-                <img src="images/sylvie.jpg" alt="Header Image">
-            </picture>
-        </div>
+                <!-- Add the form here -->
+                <form method="post" action="sendfile.php">
+                    <div class="row gtr-uniform">
+                        <div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
+                        <div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
+                        <div class="col-12"><input type="text" name="subject" id="subject" placeholder="Subject" /></div>
+                        <div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="6"></textarea></div>
+                        <div class="col-12">
+                            <ul class="actions">
+                                <li><input type="submit" class="primary" value="Send Message" /></li>
+                                <li><input type="reset" value="Reset Form" /></li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Four -->
+        <section id="four">
+            <div class="container">
+                <h2>Articles</h2>
+                <p>Welcome! Below are some of my favorite podcasts and helpful Quality Assurance test articles:</p>
+
+                <h3>Favorite Podcasts</h3>
+                <ul>
+                    <li><a href="https://astonishinglegends.com/archived-episodes/#recent-podcasts" target="_blank">Astonishing Legends</a></li>
+                    <li><a href="https://themoth.org/radio-hour" target="_blank">The Moth</a></li>
+                    <li><a href="https://www.thisamericanlife.org/archive" target="_blank">This American Life</a></li>
+                    <li><a href="https://darknetdiaries.com/episode/" target="_blank">Darknet Diaries</a></li>
+                </ul>
+
+                <h3>Helpful Quality Assurance Test Articles</h3>
+                <p>Start here to check out a collection of <a href="https://github.com/ChristoWolf/awesome-testing-blogs" target="_blank">Awesome Testing Blogs</a>.</p>
+            </div>
+        </section>
+
     </div>
+
+    <!-- Footer -->
+    <section id="footer">
+        <div class="container">
+            <ul class="copyright">
+                <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </section>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
 </body>
 </html>
