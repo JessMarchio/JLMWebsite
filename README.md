@@ -1,40 +1,37 @@
-# My Personal Website Guide
+# Jessie Marchio's Personal Website
 
-Welcome to my personal website guide! This document will walk you through setting up and using my Python website repository.
+Welcome to my personal website repository! This repository contains the source code for my personal website hosted on GitHub Pages.
+
+## About Me
+
+I'm Jessie Marchio, and this website serves as my corner of the internet where you can learn more about me, my interests, and my projects.
+
+## Features
+
+- **About Me:** Get to know me better through my bio and personal interests.
+- **Portfolio:** Explore highlights of my work and projects.
+- **Articles:** Check out my favorite podcasts and helpful quality assurance test articles.
+- **Contact:** Reach out to me and connect via email or LinkedIn.
 
 ## Getting Started
 
-Follow these steps to set up and use my website repository:
-
-### Prerequisites
-
-- Make sure you have Python installed on your machine. You can download it from [Python.org](https://www.python.org/).
-
-### Installation
-
-1. Ensure you have Python installed on your machine. You can download it from [Python.org](https://www.python.org/).
-2. Navigate to the project directory.
-
-### Running the Website Locally
-
-To run the website locally, follow these steps:
-
-1. Start the Flask application by running:
-
-   ```bash
-   python app.py
-   ```
-
-2. Open a web browser and go to `http://127.0.0.1:5000/` to view the website.
-
-### Deployment
-
-You can deploy your website using GitHub Pages or Heroku. Follow the instructions provided in the deployment section of the README file in your repository.
-
-## Customization
-
-You can customize your website by modifying the HTML templates (`index.html`, `about.html`, `contact.html`) and the `app.py` file. Feel free to add new pages, update content, or enhance functionality as needed.
+To view my website, simply visit [https://jessiemarchio.github.io/JessMarchio/](https://jessiemarchio.github.io/JessMarchio/) in your web browser.
 
 ## Contributing
 
-If you'd like to contribute to this project, you're welcome to open a pull request with your changes. Contributions are appreciated!
+If you'd like to contribute to my website or suggest any improvements, feel free to submit a pull request or open an issue. Your feedback and contributions are greatly appreciated!
+
+## Technologies Used
+
+- HTML
+- CSS
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Contact
+
+If you have any questions or inquiries, feel free to reach out to me:
+- Email: jessiemarchio@gmail.com
+- LinkedIn: [Jessie Marchio](https://www.linkedin.com/in/jessie-marchio-096515114/)
