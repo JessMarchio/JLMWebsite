@@ -143,7 +143,7 @@
                         <input type="text" id="eyeTone" placeholder="#2f1810">
                         <label for="hairTone">Hair Tone (Hex):</label>
                         <input type="text" id="hairTone" placeholder="#1c150f">
-                        <button onclick="analyzePalette()">Analyze</button>
+                        <button>Analyze</button>
                         <div id="result"></div>
                     </div>
                 </div>
@@ -171,141 +171,144 @@
 
     <!-- Skin Tone Analyzer Script -->
     <script>
-        function analyzePalette() {
-            const skinTone = document.getElementById('skinTone').value;
-            const eyeTone = document.getElementById('eyeTone').value;
-            const hairTone = document.getElementById('hairTone').value;
+        document.addEventListener('DOMContentLoaded', function() {
+            const analyzeButton = document.querySelector('#skinToneAnalyzer button');
+            analyzeButton.addEventListener('click', analyzePalette);
 
-            const skinHSL = hexToHSL(skinTone);
-            const eyeHSL = hexToHSL(eyeTone);
-            const hairHSL = hexToHSL(hairTone);
+            function analyzePalette() {
+                const skinTone = document.getElementById('skinTone').value;
+                const eyeTone = document.getElementById('eyeTone').value;
+                const hairTone = document.getElementById('hairTone').value;
 
-            const season = determineSeason(skinHSL, eyeHSL, hairHSL);
-            const { bestColors, avoidColors } = getColorPalette(season);
-            const explanation = getExplanation(season);
-            const outfits = getOutfitExamples(bestColors);
-            const makeup = getMakeupExamples(bestColors);
+                const skinHSL = hexToHSL(skinTone);
+                const eyeHSL = hexToHSL(eyeTone);
+                const hairHSL = hexToHSL(hairTone);
 
-            let resultHTML = `
-                <h2>Analysis Result</h2>
-                <p>Based on your provided colors:</p>
-                <ul>
-                    <li>Skin Tone: <span class="color-sample" style="background-color:${skinTone};"></span>${skinTone}</li>
-                    <li>Eye Tone: <span class="color-sample" style="background-color:${eyeTone};"></span>${eyeTone}</li>
-                    <li>Hair Tone: <span class="color-sample" style="background-color:${hairTone};"></span>${hairTone}</li>
-                </ul>
-                <h3>Your color season is: ${season}</h3>
-                <p>${explanation}</p>
-                <h4>Best colors for you:</h4>
-                <ul>
-                    ${bestColors.map(color => `<li><span class="color-sample" style="background-color:${color};"></span>${color}</li>`).join('')}
-                </ul>
-                <h4>Colors to avoid:</h4>
-                <ul>
-                    ${avoidColors.map(color => `<li><span class="color-sample" style="background-color:${color};"></span>${color}</li>`).join('')}
-                </ul>
-                <h4>Outfit Examples:</h4>
-                ${outfits.map((outfit, index) => `
-                    <div class="outfit">
-                        <p>Outfit ${index + 1}:</p>
-                        ${outfit.map(color => `<div class="outfit-item" style="background-color:${color};"></div>`).join('')}
-                    </div>
-                `).join('')}
-                <h4>Makeup Examples:</h4>
-                <ul>
-                    ${makeup.map(item => `<li>${item}</li>`).join('')}
-                </ul>
-            `;
+                const season = determineSeason(skinHSL, eyeHSL, hairHSL);
+                const { bestColors, avoidColors } = getColorPalette(season);
+                const explanation = getExplanation(season);
+                const outfits = getOutfitExamples(bestColors);
+                const makeup = getMakeupExamples(bestColors);
 
-            document.getElementById('result').innerHTML = resultHTML;
-        }
+                let resultHTML = `
+                    <h2>Analysis Result</h2>
+                    <p>Based on your provided colors:</p>
+                    <ul>
+                        <li>Skin Tone: <span class="color-sample" style="background-color:${skinTone};"></span>${skinTone}</li>
+                        <li>Eye Tone: <span class="color-sample" style="background-color:${eyeTone};"></span>${eyeTone}</li>
+                        <li>Hair Tone: <span class="color-sample" style="background-color:${hairTone};"></span>${hairTone}</li>
+                    </ul>
+                    <h3>Your color season is: ${season}</h3>
+                    <p>${explanation}</p>
+                    <h4>Best colors for you:</h4>
+                    <ul>
+                        ${bestColors.map(color => `<li><span class="color-sample" style="background-color:${color};"></span>${color}</li>`).join('')}
+                    </ul>
+                    <h4>Colors to avoid:</h4>
+                    <ul>
+                        ${avoidColors.map(color => `<li><span class="color-sample" style="background-color:${color};"></span>${color}</li>`).join('')}
+                    </ul>
+                    <h4>Outfit Examples:</h4>
+                    ${outfits.map((outfit, index) => `
+                        <div class="outfit">
+                            <p>Outfit ${index + 1}:</p>
+                            ${outfit.map(color => `<div class="outfit-item" style="background-color:${color};"></div>`).join('')}
+                        </div>
+                    `).join('')}
+                    <h4>Makeup Examples:</h4>
+                    <ul>
+                        ${makeup.map(item => `<li>${item}</li>`).join('')}
+                    </ul>
+                `;
 
-        function hexToHSL(hex) {
-            let r = parseInt(hex.slice(1, 3), 16) / 255;
-            let g = parseInt(hex.slice(3, 5), 16) / 255;
-            let b = parseInt(hex.slice(5, 7), 16) / 255;
-
-            let max = Math.max(r, g, b), min = Math.min(r, g, b);
-            let h, s, l = (max + min) / 2;
-
-            if (max === min) {
-                h = s = 0;
-            } else {
-                let d = max - min;
-                s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-                switch (max) {
-                    case r: h = (g - b) / d + (g < b ? 6 : 0); break;
-                    case g: h = (b - r) / d + 2; break;
-                    case b: h = (r - g) / d + 4; break;
-                }
-                h /= 6;
+                document.getElementById('result').innerHTML = resultHTML;
             }
 
-            return { h: h * 360, s: s * 100, l: l * 100 };
-        }
+            function hexToHSL(hex) {
+                let r = parseInt(hex.slice(1, 3), 16) / 255;
+                let g = parseInt(hex.slice(3, 5), 16) / 255;
+                let b = parseInt(hex.slice(5, 7), 16) / 255;
 
-        function determineSeason(skin, eye, hair) {
-            let warmth = (skin.h < 30 || skin.h > 330) ? 1 : -1;
-            warmth += (eye.h < 30 || eye.h > 330) ? 1 : -1;
-            warmth += (hair.h < 30 || hair.h > 330) ? 1 : -1;
+                let max = Math.max(r, g, b), min = Math.min(r, g, b);
+                let h, s, l = (max + min) / 2;
 
-            let brightness = (skin.l + eye.l + hair.l) / 3;
-
-            if (warmth > 0) {
-                return brightness > 50 ? "Warm Spring" : "Warm Autumn";
-            } else {
-                return brightness > 50 ? "Cool Summer" : "Cool Winter";
-            }
-        }
-
-        function getColorPalette(season) {
-            const palettes = {
-                "Warm Spring": {
-                    best: ["#FF9933", "#66CC99", "#FF6666", "#FFCC66", "#99CC33"],
-                    avoid: ["#000080", "#4B0082", "#708090", "#800000", "#008080"]
-                },
-                "Warm Autumn": {
-                    best: ["#8B4513", "#DAA520", "#CD853F", "#D2691E", "#B8860B"],
-                    avoid: ["#00FFFF", "#FF69B4", "#00FF00", "#40E0D0", "#7FFFD4"]
-                },
-                "Cool Summer": {
-                    best: ["#87CEEB", "#DDA0DD", "#20B2AA", "#778899", "#B0C4DE"],
-                    avoid: ["#FF4500", "#8B0000", "#FF8C00", "#FFD700", "#FF6347"]
-                },
-                "Cool Winter": {
-                    best: ["#FFFFFF", "#000000", "#FF0000", "#0000FF", "#800080"],
-                    avoid: ["#FFA500", "#FFFF00", "#008000", "#8B4513", "#A0522D"]
+                if (max === min) {
+                    h = s = 0;
+                } else {
+                    let d = max - min;
+                    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+                    switch (max) {
+                        case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+                        case g: h = (b - r) / d + 2; break;
+                        case b: h = (r - g) / d + 4; break;
+                    }
+                    h /= 6;
                 }
-            };
-            return palettes[season];
-        }
 
-        function getExplanation(season) {
-            const explanations = {
-                "Warm Spring": "Your coloring has warm undertones with a bright, clear quality. You look best in warm, clear colors that reflect the freshness of spring.",
-                "Warm Autumn": "Your coloring has warm, golden undertones with a muted quality. You look best in warm, muted colors that reflect the richness of autumn.",
-                "Cool Summer": "Your coloring has cool undertones with a soft, muted quality. You look best in cool, soft colors that reflect the gentleness of summer.",
-                "Cool Winter": "Your coloring has cool undertones with a bright, clear quality. You look best in cool, clear colors that reflect the crispness of winter."
-            };
-            return explanations[season];
-        }
+                return { h: h * 360, s: s * 100, l: l * 100 };
+            }
 
-        function getOutfitExamples(colors) {
-            return [
-                [colors[0], colors[1], colors[2]],
-                [colors[1], colors[3], colors[4]],
-                [colors[2], colors[4], colors[0]]
-            ];
-        }
+            function determineSeason(skin, eye, hair) {
+                let warmth = (skin.h < 30 || skin.h > 330) ? 1 : -1;
+                warmth += (eye.h < 30 || eye.h > 330) ? 1 : -1;
+                warmth += (hair.h < 30 || hair.h > 330) ? 1 : -1;
 
-        function getMakeupExamples(colors) {
-            return [
-                `Lipstick: ${colors[0]}`,
-                `Eyeshadow: ${colors[1]}`,
-                `Blush: ${colors[2]}`,
-                `Eyeliner: ${colors[3]}`
-            ];
-        }
+                let brightness = (skin.l + eye.l + hair.l) / 3;
+
+                if (warmth > 0) {
+                    return brightness > 50 ? "Warm Spring" : "Warm Autumn";
+                } else {
+                    return brightness > 50 ? "Cool Summer" : "Cool Winter";
+                }
+            }
+
+            function getColorPalette(season) {
+                const palettes = {
+                    "Warm Spring": {
+                        best: ["#FF9933", "#66CC99", "#FF6666", "#FFCC66", "#99CC33"],
+                        avoid: ["#000080", "#4B0082", "#708090", "#800000", "#008080"]
+                    },
+                    "Warm Autumn": {
+                        best: ["#8B4513", "#DAA520", "#CD853F", "#D2691E", "#B8860B"],
+                        avoid: ["#00FFFF", "#FF69B4", "#00FF00", "#40E0D0", "#7FFFD4"]
+                    },
+                    "Cool Summer": {
+                        best: ["#87CEEB", "#DDA0DD", "#20B2AA", "#778899", "#B0C4DE"],
+                        avoid: ["#FF4500", "#8B0000", "#FF8C00", "#FFD700", "#FF6347"]
+                    },
+                    "Cool Winter": {
+                        best: ["#FFFFFF", "#000000", "#FF0000", "#0000FF", "#800080"],
+                        avoid: ["#FFA500", "#FFFF00", "#008000", "#8B4513", "#A0522D"]
+                    }
+                };
+                return palettes[season];
+            }
+
+            function getExplanation(season) {
+                const explanations = {
+                    "Warm Spring": "Your coloring has warm undertones with a bright, clear quality. You look best in warm, clear colors that reflect the freshness of spring.",
+                    "Warm Autumn": "Your coloring has warm, golden undertones with a muted quality. You look best in warm, muted colors that reflect the richness of autumn.",
+                    "Cool Summer": "Your coloring has cool undertones with a soft, muted quality. You look best in cool, soft colors that reflect the gentleness of summer.",
+                    "Cool Winter": "Your coloring has cool undertones with a bright, clear quality. You look best in cool, clear colors that reflect the crispness of winter."
+                };
+                return explanations[season];
+            }
+
+            function getOutfitExamples(colors) {
+                return [
+                    [colors[0], colors[1], colors[2]],
+                    [colors[1], colors[3], colors[4]],
+                    [colors[2], colors[4], colors[0]]
+                ];
+            }
+
+            function getMakeupExamples(colors) {
+                return [
+                    `Lipstick: ${colors[0]}`,
+                    `Eyeshadow: ${colors[1]}`,
+                    `Blush: ${colors[2]}`,
+                    `Eyeliner: ${colors[3]}`
+                ];
+            }
+        });
     </script>
-</body>
-</html>
