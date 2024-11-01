@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <title>Jess Marchio</title>
@@ -14,7 +14,8 @@
         <header>
             <span class="image avatar"><img src="images/jess.jpeg" alt="Photo of Jess"></span>
             <h1 id="logo"><a href="#">Jess Marchio</a></h1>
-            <p>Hi, I'm Jess!<br> Welcome to my site. Feel free to look around.</p>
+            <p id="dynamicGreeting"></p> <!-- Dynamic Greeting Placeholder -->
+            <p id="welcomeMessage"></p> <!-- Typing Effect Placeholder -->
         </header>
         <nav id="nav">
             <ul>
@@ -31,11 +32,16 @@
         </footer>
     </section>
 
+    <!-- Scroll Progress Bar -->
+    <div id="progressBar"></div>
+
+    <!-- Back-to-Top Button -->
+    <button id="backToTop" title="Go to top">Top</button>
+
     <!-- Wrapper -->
     <div id="wrapper">
-        <!-- Main -->
+        <!-- Main Content Sections here -->
         <div id="main">
-
             <!-- One -->
             <section id="one">
                 <div class="container">
@@ -104,29 +110,23 @@
                             href="https://github.com/JessMarchio">GitHub - JessMarchio</a></p>
                     <p>For more details about my professional background and projects, feel free to check out my <a
                             href="https://www.linkedin.com/in/jessie-marchio-096515114/">LinkedIn profile</a>.</p>
+                    <!-- Portfolio items can be added here -->
                 </div>
             </section>
 
-            <!-- Three -->
+            <!-- three -->
             <section id="three">
                 <div class="container">
                     <h2>Interests</h2>
                     <p>Here are some of our favorite podcasts:</p>
                     <ul>
-                        <li><img src="https://astonishinglegends.com/" alt="Astonishing Legends Logo"
-                                style="width: 100px; height: auto;"><a
+                        <li><img src="https://images.squarespace-cdn.com/content/v1/57eaab3659cc68cc4f3275a5/1601516949789-GU42WVP8QK181AYT2KUV/AL-logo--flaming-eyes.gif?format=500w"
+                                alt="Astonishing Legends Logo" style="width: 100px; height: auto;"><a
                                 href="https://astonishinglegends.com/archived-episodes/#recent-podcasts"
                                 target="_blank">Astonishing Legends</a></li>
                         <li><img src="https://s3.amazonaws.com/themoth-images-development/Moth_PodcastIconWPRX.png"
                                 alt="The Moth Logo" style="width: 100px; height: auto;"><a
                                 href="https://themoth.org/radio-hour" target="_blank">The Moth Radio Hour</a></li>
-                        <li><img src="https://en.wikipedia.org/wiki/File:Thisamericanlife-wbez.png"
-                                alt="This American Life Logo" style="width: 100px; height: auto;"><a
-                                href="https://www.thisamericanlife.org/archive" target="_blank">This American Life</a>
-                        </li>
-                        <li><img src="https://en.wikipedia.org/wiki/File:Darknet_Diaries_podcast_artwork.jpg"
-                                alt="Darknet Diaries Logo" style="width: 100px; height: auto;"><a
-                                href="https://darknetdiaries.com/episode/" target="_blank">Darknet Diaries</a></li>
                     </ul>
                 </div>
             </section>
@@ -141,12 +141,7 @@
         </div>
     </section>
 
-    <div id="modal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modalImage">
-    </div>
-
-    <!-- Link to combined JavaScript file -->
+    <!-- Scripts -->
     <script src="assets/js/scripts.js"></script>
 </body>
 
